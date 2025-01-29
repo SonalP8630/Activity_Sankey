@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      display: flex;
+      width: 700px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container {
+      flex: 1;
+      background-color: black;
+      border-radius: 5px 0 0 5px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .form-container {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: rgb(63, 62, 62);
+    }
+
+    .field {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    #login {
+      background-color: rgb(62, 212, 62);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    #sign {
+      background-color: black;
+      margin-top: 10px;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .remember-me {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .signup-link {
+      margin-top: 15px;
+      text-align: center;
+      color: white;
+    }
+
+    .signInGoogle {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+  body {
+   
+    font-size: 14px;
+       }
+    }
+
+    @media (max-width: 600px) {
+
+        body {
+   
+    background-image: url(taskImg.png);
+    backdrop-filter: blur(10px);
+   
+       }
+  .login-container {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 85%;
+        }
+
+        #taskImg
+        {
+            display: none;
+        }
+    }
+
+  </style>
+</head>
+<body>
+    <div class="login-container">
+      <div class="image-container">
+        <img src="taskImg.png" alt="Image" id="taskImg">
+      </div>
+      <div class="form-container">
+        <p>Welcome Back</p>
+        <h3>Login to Your Account</h3>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="field" placeholder="Enter your password" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" class="field" required>
+        <div class="remember-me">
+          <input type="radio" id="rememberMe" name="rememberMe">
+          <label for="rememberMe" style="margin-bottom: 10px;">Remember me</label>
+        </div>
+        <button type="submit" id="login">Login Now</button>
+
+        <div id="errorMsg" style="color: red;"></div> 
+        
+        <button type="submit" id="sign" class="signInGoogle">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/640px-Google_%22G%22_logo.svg.png"
+               alt=""
+               width="20px"
+               height="20px"
+               style="margin-right: 2px;">
+          Or Sign in with Google
+        </button>
+        
+        
+        
+      </div>
+    </div>
+  
+    <script>
+      const loginButton = document.getElementById('login');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const errorMsg = document.getElementById('errorMsg');
+  
+      loginButton.addEventListener('click', (event) => {
+        event.preventDefault();  
+  
+        const email = emailInput.value;
+        const password = passwordInput.value;
+  
+        
+        errorMsg.textContent = '';
+  
+        
+        if (email === 'sankey901@solutions.com' && password === 'mindset') {
+          window.location.href = 'welcome.html'; 
+        } else if (email !== 'sankey901@solutions.com') {
+          errorMsg.textContent = 'Invalid username/email';
+        } else if (password !== 'mindset') {
+          errorMsg.textContent = 'Invalid password';
+        }
+      });
+    </script>
+  </body>
+  
+</html>
