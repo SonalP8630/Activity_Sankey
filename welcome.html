@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        #value {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Sankey Solutions</h1>
+    <button onclick="showValue()">Click to See a Core Value</button>
+    <p id="value"></p>
+
+    <script>
+        function showValue() {
+            const coreValues = [
+                "Innovation: We embrace creativity and new ideas.",
+                "Integrity: We act with honesty and strong moral principles.",
+                "Collaboration: We work together to achieve common goals.",
+                "Customer Focus: We prioritize customer satisfaction and success.",
+                "Continuous Learning: We strive for growth and self-improvement.",
+                "Proactiveness: We take initiative and anticipate challenges to stay ahead.",
+                "Ownership: We take responsibility for our work and its impact.",
+                "Excellence: We aim for the highest standards in everything we do.",
+                "Agility: We adapt quickly to changes and challenges.",
+                "Transparency: We maintain open and honest communication."
+            ];
+            const randomIndex = Math.floor(Math.random() * coreValues.length);
+            document.getElementById("value").textContent = coreValues[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
